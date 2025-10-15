@@ -197,7 +197,7 @@ class UICv_PaintMask(UIOpenCvBaseNode):
             super(UICv_PaintMask, self).createInputWidgets(inputsCategory, inGroup)
 
         instance = self.canvasRef().uflowInstance.invokeDockToolByName(
-            "uflowOpenCv", "ImageViewerTool"
+            "OpenCVPackage", "ImageViewerTool"
         )
         if self.Painter.scene() == None:
             instance.viewer._scene.addItem(self.Painter)
@@ -210,6 +210,6 @@ class UICv_PaintMask(UIOpenCvBaseNode):
             self.openProperties.remove(obj)
         # if len(self.openProperties)==0 and self.item.scene():
         instance = self.canvasRef().uflowInstance.invokeDockToolByName(
-            "uflowOpenCv", "ImageViewerTool"
+            "OpenCVPackage", "ImageViewerTool"
         )
         instance.viewer._scene.removeItem(self.Painter)

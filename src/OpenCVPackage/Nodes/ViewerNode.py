@@ -47,7 +47,7 @@ class ViewerNode(NodeBase):
             inputData = self.inp.getData()
             # if self.viewer is None:
             viewer = self._wrapper.canvasRef().uflowInstance.invokeDockToolByName(
-                "uflowOpenCv", "ImageViewerTool"
+                "OpenCVPackage", "ImageViewerTool"
             )
             yInputPins = sorted(
                 self.arrayData.affected_by, key=lambda pin: pin.owningNode().y

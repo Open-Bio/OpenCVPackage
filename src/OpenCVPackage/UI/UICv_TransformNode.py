@@ -180,7 +180,7 @@ class UICv_TransformNode(UIOpenCvBaseNode):
     def _refresh_tool_image(self):
         self.refreshImage()
         instance = self.canvasRef().uflowInstance.invokeDockToolByName(
-            "uflowOpenCv", "ImageViewerTool"
+            "OpenCVPackage", "ImageViewerTool"
         )
         if instance:
             img = self.imagePin.getData()
@@ -196,7 +196,7 @@ class UICv_TransformNode(UIOpenCvBaseNode):
             super(UICv_TransformNode, self).createInputWidgets(inputsCategory, inGroup)
 
         instance = self.canvasRef().uflowInstance.invokeDockToolByName(
-            "uflowOpenCv", "ImageViewerTool"
+            "OpenCVPackage", "ImageViewerTool"
         )
         if self.item.scene() == None:
             instance.viewer._scene.addItem(self.item)
@@ -221,6 +221,6 @@ class UICv_TransformNode(UIOpenCvBaseNode):
             self.openProperties.remove(obj)
         if len(self.openProperties) == 0 and self.item.scene():
             instance = self.canvasRef().uflowInstance.invokeDockToolByName(
-                "uflowOpenCv", "ImageViewerTool"
+                "OpenCVPackage", "ImageViewerTool"
             )
             instance.viewer._scene.removeItem(self.item)
